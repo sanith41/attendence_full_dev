@@ -2,16 +2,24 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#000000"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".studentsportal">
 
     <EditText
         android:id="@+id/studentpass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="217dp"
+        android:layout_height="50dp"
+        android:background="@color/blackish"
         android:ems="10"
+        android:hint="DOB"
         android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:textColorHint="@color/yellow"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -21,10 +29,16 @@
 
     <EditText
         android:id="@+id/stusn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="217dp"
+        android:layout_height="50dp"
+        android:textColorHint="@color/yellow"
+        android:background="@color/blackish"
         android:ems="10"
+        android:hint="USN"
         android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -37,11 +51,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LOGIN"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.754" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="126dp"
+        android:layout_height="101dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.252"
+        app:srcCompat="@drawable/login3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
