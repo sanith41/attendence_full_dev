@@ -9,8 +9,8 @@
 
     <Button
         android:id="@+id/student"
-        android:layout_width="260dp"
-        android:layout_height="57dp"
+        android:layout_width="269dp"
+        android:layout_height="79dp"
         android:background="@color/blackish"
 
         android:text="STUDENT"
@@ -19,15 +19,14 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintHorizontal_bias="0.563"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/admin"
-        android:layout_width="268dp"
-        android:layout_height="53dp"
+        android:layout_width="274dp"
+        android:layout_height="77dp"
         android:layout_weight="1"
 
 
@@ -39,22 +38,43 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.575" />
+        app:layout_constraintVertical_bias="0.726" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="143dp"
-        android:layout_height="129dp"
+        android:layout_width="111dp"
+        android:layout_height="108dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.003"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.006"
         app:srcCompat="@drawable/signinpage" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="414dp"
+        android:layout_height="51dp"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="@color/yellow"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        android:text="Student Attendance System"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.392"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.232" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

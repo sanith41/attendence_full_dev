@@ -23,9 +23,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class scanning extends AppCompatActivity implements OnClickListener {
-    Button scan;
+    Button scan,exit;
     TextView messageText,test;
     String input;
+    ArrayList<String> checkduplicate = new ArrayList<>();
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,9 @@ public class scanning extends AppCompatActivity implements OnClickListener {
         scan = findViewById(R.id.scan);
         messageText = findViewById(R.id.t1);
         test = findViewById(R.id.test);
+        exit=findViewById(R.id.exit);
+
+
 
         input = (String)getIntent().getExtras().getSerializable("key");
         //Toast.makeText(scanning.this,input, Toast.LENGTH_SHORT).show();
@@ -46,6 +53,14 @@ public class scanning extends AppCompatActivity implements OnClickListener {
 
         // adding listener to the button
         scan.setOnClickListener(this);
+        exit.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkduplicate.clear();
+                startActivity(new Intent(getApplicationContext(),login.class));
+
+            }
+        });
 
 
 
@@ -88,13 +103,13 @@ public class scanning extends AppCompatActivity implements OnClickListener {
              String[] arr=qr.split("%");
              String table=arr[0];
              System.out.println(table);
-             String usn=arr[1];
+             String usnt=arr[1];
              String name=arr[2];
                // test.setText(usn+" "+name+" "+table);
                 String[] tablename=table.split("//");
                 String shit=tablename[0];
                 String branch=tablename[1];
-                test.setText(usn+" "+name+" "+branch);
+                test.setText(usnt+" "+name+" "+branch);
 
 
 
@@ -103,20 +118,28 @@ public class scanning extends AppCompatActivity implements OnClickListener {
                 Connection connection = c.conclass();
                 if(c!=null){
                     try {
-                        //coreection here
-                       ArrayList<String> checkduplicate = new ArrayList<String>();
-                       Boolean t=checkduplicate.contains(usn);
 
-                            if (t=true) {
-                                Toast.makeText(this, "duplicate entires not allowed", Toast.LENGTH_SHORT).show();
+                        //coreection here
+                        Boolean t;
+                        t=checkduplicate.contains(usnt);
+                        System.out.println(t);
+
+                            if (t==true) {
+                                Toast.makeText(this, "duplicate entries not allowed", Toast.LENGTH_SHORT).show();
                             }
                             else{
-                                String check = "UPDATE "+branch+" SET "+input+" = "+input+"+1 WHERE usn='"+usn+"';";
+                                checkduplicate.add(usnt);
+                                String check = "UPDATE "+branch+" SET "+input+"="+input+"+1 WHERE usn='"+usnt+"';";
                                 Statement smt2 = connection.createStatement();
                                 ResultSet set2 = smt2.executeQuery(check);
                                 System.out.println(set2);
-                                checkduplicate.add(usn);
+
+
+
+
+
                             }
+
 
 
 
